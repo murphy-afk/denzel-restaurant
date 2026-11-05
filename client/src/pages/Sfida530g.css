@@ -1,26 +1,28 @@
 .sfida-content {
-  max-width: 700px;
+  max-width: 680px;
   margin: 0 auto;
   text-align: center;
 }
 
 .sfida-lead {
-  font-size: 1.3rem;
-  font-style: italic;
+  font-family: var(--font-chalk);
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
   color: var(--color-text-secondary);
   margin-bottom: var(--space-xl);
 }
 
 .sfida-challenge {
-  font-size: 1.6rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
   font-weight: 700;
   color: var(--color-accent);
   margin-bottom: var(--space-xl);
+  text-shadow: 0 0 40px var(--color-accent-glow);
 }
 
 .sfida-content p {
   font-size: 1.05rem;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 .sfida-image {
@@ -29,7 +31,9 @@
 
 .sfida-image img {
   width: 100%;
-  max-width: 500px;
+  max-width: 480px;
   margin: 0 auto;
   border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
 }
