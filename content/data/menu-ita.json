@@ -1,0 +1,382 @@
+{
+  "languages": {
+    "ita": {
+      "label": "Menù Italiano",
+      "images": [
+        "denzel_menu_ita-01.jpg",
+        "denzel_menu_ita-02.jpg",
+        "denzel_menu_ita-03.jpg",
+        "denzel_menu_ita-04.png",
+        "denzel_menu_ita-05.png",
+        "denzel_menu_ita-06.png",
+        "denzel_menu_ita-07.png",
+        "denzel_menu_ita-08.png",
+        "denzel_menu_ita-09.png",
+        "denzel_menu_ita-10.png",
+        "denzel_menu_ita-11.png",
+        "denzel_menu_ita-12.jpg"
+      ]
+    },
+    "eng": { "label": "English Menu", "images": [] },
+    "ebr": { "label": "Menù Ebrew", "images": [] },
+    "fra": { "label": "Menù Français", "images": [] }
+  },
+  "categories": [
+    {
+      "id": "antipasti",
+      "name": "ANTIPASTI",
+      "items": [
+        {
+          "name": "ORIENTAL DENZEL",
+          "price": "15€",
+          "description": "Composizione di felafel, tehina (salsa di sesamo), humus (salsa di ceci) e insalata israeliana (insalata a base di cetrioli e peperoni)"
+        },
+        {
+          "name": "INSALATA VERDE",
+          "price": "9€",
+          "description": "Lattuga e insalata baby condite con salsa Sacwan (senape, aceto bianco, olio EVO e miele) e mandorle"
+        },
+        {
+          "name": "MESSI VEGETARIAN",
+          "price": "12€",
+          "description": "Involtini di melanzane fritte, farciti con tehina (salsa di sesamo) serviti su un letto di insalata israeliana"
+        },
+        {
+          "name": "J SALAD",
+          "price": "12€",
+          "description": "Fette di pollo grigliate accompagnate da lattuga, insalata baby e pomodorini ciliegino, condite con olio, sale e limone"
+        },
+        {
+          "name": "DORKA SALAD",
+          "price": "14€",
+          "description": "Cubetti di pollo saltati in padella con miele e mandorle accompagnati da pomodorini ciliegino, conditi con olio, sale e cumino"
+        },
+        {
+          "name": "KEBBE",
+          "price": "3€",
+          "unit": "al pezzo",
+          "description": "Polpetta fritta di carne macinata speziata e bulgur (chicchi di grano duro)"
+        },
+        {
+          "name": "DENZEL WINGS",
+          "price": "14€",
+          "description": "Ali di pollo cotte al forno, passate nell'olio bollente, saltate in padella, servite su un letto di insalata baby, accompagnate a scelta da salsa chili o teriyaki"
+        },
+        {
+          "name": "COPPA",
+          "price": "15€",
+          "description": "Carpaccio di coppa di manzo, condito con olio EVO, sale e limone e un assaggio di insalata baby e pomodorini ciliegino"
+        },
+        {
+          "name": "MESSI MEAT",
+          "price": "14€",
+          "description": "Polpettine di manzo avvolte su bastoncini di cannella, preparati con baharat, prezzemolo, pinoli tostati, serviti su un letto di insalata israeliana e tehina"
+        },
+        {
+          "name": "MINI WÜRSTEL",
+          "price": "14€",
+          "description": "Mini würstel libanesi accompagnati da patatine fritte e carciofini fritti"
+        }
+      ]
+    },
+    {
+      "id": "panini",
+      "name": "PANINI DENZEL",
+      "items": [
+        {
+          "name": "DENZEL BURGER",
+          "prices": { "150 gr": "11,50€", "180 gr": "13€", "230 gr": "14,50€" },
+          "description": "Carne trita fresca di manzo preparata in casa con insalata, pomodori, cipolle e cetrioli sott'aceto",
+          "addon": { "name": "DENZEL BURGER PLUS", "price": "+ 6€", "description": "Aggiungi altri 100gr di manzo al tuo burger: 330gr, 430gr 530gr" }
+        },
+        {
+          "name": "ART AGNELLO",
+          "price": "14,50€",
+          "weight": "180gr",
+          "description": "Carne trita fresca di agnello preparata in casa con insalata, pomodori, cipolle e cetrioli sott'aceto",
+          "addon": { "name": "ART AGNELLO PLUS", "price": "+ 6€", "description": "Aggiungi altri 100gr di agnello al tuo art agnello: 280gr, 380gr 480gr" }
+        },
+        {
+          "name": "PIMENTO BURGER",
+          "price": "14,50€",
+          "weight": "180gr",
+          "description": "Carne trita fresca, mista di manzo e agnello con peperoncino olandese piccante, insalata, pomodori, cipolle, cetrioli sott'aceto, con salsa BBQ Denzel",
+          "addon": { "name": "PIMENTO PLUS", "price": "+ 6€", "description": "Aggiungi altri 100gr di carne al tuo Pimento Burger: 280gr, 380gr 480gr" }
+        },
+        {
+          "name": "CHICKEN BURGER",
+          "price": "12€",
+          "description": "Hamburger di pollo speziato servito con insalata, pomodori, zucchine e maionese"
+        },
+        {
+          "name": "SNITZEL",
+          "price": "15€",
+          "description": "Cotoletta di petto di pollo servita nella ciabatta con insalata, pomodori e peperoni"
+        },
+        {
+          "name": "PASTRAMI",
+          "price": "16€",
+          "description": "Ciabatta ripiena di fettine di pastrami (affettato di manzo affumicato) insalata, pomodori e verdure alla griglia"
+        },
+        {
+          "name": "ART CHICKEN",
+          "price": "13,50€",
+          "description": "Petto di pollo marinato in olio EVO, vino bianco e spezie, cotto alla griglia e servito nella ciabatta con maionese fatta in casa, insalata, pomodori e peperoni"
+        },
+        {
+          "name": "JUMBO DOG",
+          "price": "14€",
+          "description": "Salsicciotto di manzo alla griglia con insalata, pomodoro, chimichurri, cipolle grigliate e senape"
+        },
+        {
+          "name": "ARTROCA",
+          "price": "15€",
+          "description": "Ciabatta ripiena di fettine di roastbeef scottate con insalata, salsa chimichurri e pomodori"
+        },
+        {
+          "name": "ARTROCA BBQ",
+          "price": "15€",
+          "description": "Ciabatta ripiena di roastbeef scottate con salsa BBQ Denzel, insalata, pomodori, cipolle grigliate e peperoni"
+        },
+        {
+          "name": "DENZEL FISH",
+          "price": "15€",
+          "description": "Filetto intero di orata o branzino fritto in tempura servito nella ciabatta con insalata, pomodori, maionese fatta in casa e limone"
+        },
+        {
+          "name": "CRISPY TORTILLA",
+          "price": "15€",
+          "description": "Fettine di snitzel avvolte nella tortilla con misticanza, pomodoro, guacamole e salsa chili"
+        },
+        {
+          "name": "CHICKEN TORTILLA",
+          "price": "15€",
+          "description": "Fettine di petto di pollo avvolte nella tortilla con misticanza, maionese e pomodoro"
+        }
+      ],
+      "extras": {
+        "name": "PERSONALIZZA IL TUO PANINO",
+        "items": [
+          { "name": "Uovo occhio di bue", "price": "2€" },
+          { "name": "Funghi e cipolle grigliate", "price": "2€" },
+          { "name": "Pomodori speziati", "price": "2€" },
+          { "name": "Zucchine", "price": "2€" },
+          { "name": "Peperoni", "price": "2€" },
+          { "name": "Coppa di manzo", "price": "3€" }
+        ]
+      }
+    },
+    {
+      "id": "piatti",
+      "name": "PIATTI DENZEL",
+      "items": [
+        {
+          "name": "TRANCIO DI SALMONE",
+          "price": "20€",
+          "description": "Trancio di salmone al forno con contorno a scelta"
+        },
+        {
+          "name": "DENZEL STEAK",
+          "price": "29€",
+          "description": "Bistecca di roast-beef (300gr) con patate"
+        },
+        {
+          "name": "FISH AND CHIPS",
+          "price": "16€",
+          "description": "Filetti di orata o branzino in tempura serviti su un letto di patate fritte a mezzaluna"
+        },
+        {
+          "name": "ASIAN DENZEL",
+          "price": "16€",
+          "description": "Bocconcini di pollo saltati in padella con verdure miste, miele e salsa di soia, serviti con mandorle tostate"
+        },
+        {
+          "name": "PESCE AL FORNO",
+          "price": "20€",
+          "description": "Filetto di orata o branzino al forno con contorno a scelta"
+        },
+        {
+          "name": "DENZEL VIEL",
+          "price": "25€",
+          "description": "Filetto di vitello accompagnato da una crema di funghi al brandy"
+        },
+        {
+          "name": "LAMB CHOP",
+          "price": "26€",
+          "description": "Costolette di agnello alla brace, accompagnate da patate al forno"
+        },
+        {
+          "name": "FIORENTINA",
+          "price": "39€",
+          "description": "Costata di manzo con contorno a scelta"
+        },
+        {
+          "name": "SHWARMA",
+          "price": "17€",
+          "description": "Fettine di carne di tacchino speziate accompagnate da insalata e humus"
+        },
+        {
+          "name": "CHICKEN NUGGETS",
+          "price": "15€",
+          "description": "Bocconcini di pollo fritti accompagnati da french fries"
+        },
+        {
+          "name": "ART KEBAB",
+          "price": "21€",
+          "description": "Spiedini di carne di manzo macinata speziati alla brace, servito con riso basmati"
+        },
+        {
+          "name": "SPIEDO DENZEL",
+          "price": "21€",
+          "description": "Spiedini di pollo e pomodorini accompagnati da riso basmati"
+        },
+        {
+          "name": "ART LAMB",
+          "price": "21€",
+          "description": "Spiedini di carne macinata di agnello speziati alla brace, accompagnati da riso basmati"
+        },
+        {
+          "name": "SPIEDO TRIS",
+          "price": "21€",
+          "description": "Tris di spiedini di agnello, pollo, manzo speziati alla brace accompagnati da riso basmati"
+        },
+        {
+          "name": "MIX GRILL",
+          "price": "58€",
+          "unit": "per due persone",
+          "description": "Composizione di steak di manzo, spiedini di pollo, di manzo, di agnello, mini burger, mini würstel e mini chicken serviti con insalata baby"
+        },
+        {
+          "name": "TAGLIATA DENZEL",
+          "price": "20€",
+          "description": "Fettine di roastbeef scottate su letto di misticanza servite con salsa agrodolce a base di pere e senape"
+        },
+        {
+          "name": "SPICY NUGGETS",
+          "price": "15€",
+          "description": "Cubetti di pollo impanati e fritti immersi nella salsa chili piccante"
+        },
+        {
+          "name": "HUMUS BIL LAHME",
+          "price": "18€",
+          "description": "Carne trita speziata accompagnata da humus"
+        }
+      ]
+    },
+    {
+      "id": "contorni",
+      "name": "CONTORNI",
+      "items": [
+        { "name": "DENZEL CHIPS", "price": "6€", "description": "Patate a sfoglie sottili" },
+        { "name": "PATATE AMERICANE", "price": "6€", "description": "Patate dolci a sfoglie sottili" },
+        { "name": "ONION", "price": "6€", "description": "Cipolle impanate e fritte" },
+        { "name": "FRENCH FRIES", "price": "6€", "note": "senza glutine" },
+        { "name": "HOME FRIES", "price": "7€", "description": "Patate a mezzaluna saltate in padella con salsa chili e teriyaki" },
+        { "name": "PATATE AL FORNO", "price": "6,50€", "description": "Misto di patate e patate americane al forno" },
+        { "name": "ZUCCHINE", "price": "6€" },
+        { "name": "SPINACI", "price": "8€", "description": "Spinaci baby saltati in padella con pinoli" },
+        { "name": "CARCIOFINI A SPICCHI", "price": "6€", "note": "senza glutine" },
+        { "name": "FAGIOLINI", "price": "7€" },
+        { "name": "FUNGHI E CIPOLLE", "price": "6€", "description": "grigliati e speziati" },
+        { "name": "MELANZANE BALEDI", "price": "8€", "description": "melanzane al forno con salsa tehina, pomodori e prezzemolo" },
+        { "name": "RISO", "price": "5€" }
+      ]
+    },
+    {
+      "id": "dolci",
+      "name": "SWEET DENZEL",
+      "items": [
+        { "name": "PROFITTEROL", "price": "6€", "description": "Bignè ripieno di panna e ricoperto di cioccolato" },
+        { "name": "GRACY", "price": "6,50€", "description": "Pere cotte nel vino rosso con bastoncini di cannella" },
+        { "name": "SOUFFLÈ", "price": "6€", "description": "Tortino caldo al cioccolato accompagnato da una pallina di gelato alla crema" },
+        { "name": "TARTE TATIN", "price": "6€", "description": "Torta di mele caramellate accompagnata da una pallina di gelato alla crema" },
+        { "name": "CHOCO BANANA", "price": "6€", "description": "Banana fritta in tempura accompagnata da una pallina di gelato al cioccolato" },
+        { "name": "ANANAS", "price": "6,50€", "description": "Cubetti di ananas con gelato alla fragola" },
+        { "name": "GELATO", "price": "5€", "description": "Gusto crema, fragola, cioccolato" }
+      ]
+    },
+    {
+      "id": "bevande",
+      "name": "BEVANDE E VINI",
+      "sections": [
+        {
+          "name": "ACQUA",
+          "price": "2,00€",
+          "items": ["Panna, naturale", "San Pellegrino, frizzante"]
+        },
+        {
+          "name": "BEVANDE FREDDO",
+          "price": "3,00€",
+          "items": ["Coca Cola", "Coca Zero", "Fanta", "Sprite", "Estathè limone", "Estathè pesca"]
+        },
+        {
+          "name": "BEVANDE CALDE",
+          "items": [
+            { "name": "Caffè", "price": "1,50€" },
+            { "name": "Thè Nana", "price": "3,00€", "note": "thè caldo con menta" },
+            { "name": "Thè", "price": "3,00€" },
+            { "name": "Camomilla", "price": "2,00€" }
+          ]
+        },
+        {
+          "name": "BIRRE IN BOTTIGLIA",
+          "items": [
+            { "name": "Heineken", "price": "4,50€" },
+            { "name": "Menabrea", "price": "4,50€" },
+            { "name": "Maccabee", "price": "5,00€", "note": "israeliana bionda" },
+            { "name": "Goldstar", "price": "5,00€", "note": "israeliana rossa" }
+          ]
+        },
+        {
+          "name": "ROSSI ISRAELIANI",
+          "unit": "Bott/Cal",
+          "items": [
+            { "name": "Onot Cabernet", "price": "20/6€" },
+            { "name": "Dalton Canaan Red", "price": "26/6,50€" },
+            { "name": "Teperberg v. Cabernet", "price": "28€" },
+            { "name": "Gamla Merlot (non mevushal)", "price": "33€" },
+            { "name": "Gamla Cabernet (non mevushal)", "price": "36€" },
+            { "name": "Yarden Cabernet (non mevushal)", "price": "58€" }
+          ]
+        },
+        {
+          "name": "ROSSI ITALIANI",
+          "items": [
+            { "name": "Negroamaro Salento", "price": "20€" },
+            { "name": "Montepulciano d'Abruzzo", "price": "20€" },
+            { "name": "Primitivo del Salento", "price": "22€" },
+            { "name": "Primitivo del Salento 375cl", "price": "12€" }
+          ]
+        },
+        {
+          "name": "ROSÈ",
+          "items": [{ "name": "Rosè", "price": "19/5,50€" }]
+        },
+        {
+          "name": "BIANCHI",
+          "items": [
+            { "name": "Barkan Chardonnay", "price": "22€" },
+            { "name": "Salento Chardonnay", "price": "20€" },
+            { "name": "Onot Sauvignon Blanc", "price": "20/5,50€" },
+            { "name": "Yarden Gewürtztraminer", "price": "29€" },
+            { "name": "Prosecco", "price": "24/6€" }
+          ]
+        },
+        {
+          "name": "VINI DA DESSERT",
+          "items": [{ "name": "Moscato", "price": "24/6€" }]
+        },
+        {
+          "name": "LIQUORI",
+          "items": [
+            { "name": "Liquori Israeliani", "price": "3,50€" },
+            { "name": "Limoncello", "price": "3,50€" },
+            { "name": "Amari vari", "price": "3,50€" }
+          ]
+        }
+      ],
+      "coperto": { "name": "Coperto", "description": "La sera e i festivi", "price": "2,00€" },
+      "allergeni": "PER INFORMAZIONE SUGLI ALLERGENI, CHIEDERE AL PERSONALE DI SALA"
+    }
+  ]
+}
