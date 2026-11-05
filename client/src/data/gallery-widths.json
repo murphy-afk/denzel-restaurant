@@ -1,0 +1,171 @@
+{
+  "alberto_brandi": {
+    "full": 540,
+    "variants": [
+      528
+    ]
+  },
+  "alessandro_borghese": {
+    "full": 720,
+    "variants": [
+      528
+    ]
+  },
+  "benvenuti": {
+    "full": 1920,
+    "variants": [
+      528,
+      1024
+    ]
+  },
+  "choco_banana": {
+    "full": 1024,
+    "variants": [
+      528
+    ]
+  },
+  "coppa_di_manzo": {
+    "full": 960,
+    "variants": [
+      528
+    ]
+  },
+  "denzel_burgers": {
+    "full": 960,
+    "variants": [
+      528
+    ]
+  },
+  "denzel_burger_330g": {
+    "full": 450,
+    "variants": []
+  },
+  "denzel_friends": {
+    "full": 600,
+    "variants": [
+      528
+    ]
+  },
+  "denzel_friends_2": {
+    "full": 852,
+    "variants": [
+      528
+    ]
+  },
+  "denzel_wings": {
+    "full": 960,
+    "variants": [
+      528
+    ]
+  },
+  "d_burger_con_coppa_e_cipolle": {
+    "full": 960,
+    "variants": [
+      528
+    ]
+  },
+  "federico_basso_da_zelig": {
+    "full": 960,
+    "variants": [
+      528
+    ]
+  },
+  "felafel": {
+    "full": 450,
+    "variants": []
+  },
+  "fish_and_chips": {
+    "full": 1024,
+    "variants": [
+      528
+    ]
+  },
+  "goldstar_maccabee": {
+    "full": 1920,
+    "variants": [
+      528,
+      1024
+    ]
+  },
+  "hannuka": {
+    "full": 956,
+    "variants": [
+      528
+    ]
+  },
+  "happy_birthday": {
+    "full": 960,
+    "variants": [
+      528
+    ]
+  },
+  "homemade_chips": {
+    "full": 1920,
+    "variants": [
+      528,
+      1024
+    ]
+  },
+  "joele_dix": {
+    "full": 720,
+    "variants": [
+      528
+    ]
+  },
+  "le_massime_di_denzel": {
+    "full": 852,
+    "variants": [
+      528
+    ]
+  },
+  "location": {
+    "full": 1920,
+    "variants": [
+      528,
+      1024
+    ]
+  },
+  "lo_zoo_di_105": {
+    "full": 720,
+    "variants": [
+      528
+    ]
+  },
+  "maccio_capatonda": {
+    "full": 720,
+    "variants": [
+      528
+    ]
+  },
+  "miss_israele_2013": {
+    "full": 800,
+    "variants": [
+      528
+    ]
+  },
+  "mix_grill": {
+    "full": 1024,
+    "variants": [
+      528
+    ]
+  },
+  "oriental_denzel": {
+    "full": 1920,
+    "variants": [
+      528,
+      1024
+    ]
+  },
+  "pimento_burger": {
+    "full": 1024,
+    "variants": [
+      528
+    ]
+  },
+  "work_in_progress": {
+    "full": 720,
+    "variants": [
+      528
+    ]
+  }
+}
