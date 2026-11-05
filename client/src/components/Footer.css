@@ -65,7 +65,7 @@
 }
 
 .footer-bottom p {
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   font-size: 0.8rem;
   margin-bottom: var(--space-xs);
 }

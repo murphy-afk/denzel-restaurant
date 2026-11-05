@@ -7,4 +7,7 @@
 .main {
   flex: 1;
   padding-top: var(--header-height);
+  /* Keeps the footer below the fold while page data loads, so it never jumps
+     into view and shifts layout. */
+  min-height: 100vh;
 }

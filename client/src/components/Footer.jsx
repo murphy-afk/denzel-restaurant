@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-inner container">
         <div className="footer-section">
-          <h4 className="footer-title">DENZEL</h4>
+          <h2 className="footer-title">DENZEL</h2>
           <p>Via Washington 9</p>
           <p>20146 Milano (MI)</p>
           <p>Tel. 02 485 19326</p>
@@ -14,7 +14,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-section">
-          <h4 className="footer-title">ORARI</h4>
+          <h2 className="footer-title">ORARI</h2>
           <p>Dom - Gio</p>
           <p>Pranzo 12.00 - 14.30</p>
           <p>Cena 19.00 - 23.00</p>
@@ -22,7 +22,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-section">
-          <h4 className="footer-title">LINK</h4>
+          <h2 className="footer-title">LINK</h2>
           <Link to="/menu">Menù</Link>
           <Link to="/contact">Contatti</Link>
           <a href="https://www.justeat.it/restaurants-denzelartburgeremore" target="_blank" rel="noopener noreferrer">Just Eat</a>
@@ -30,7 +30,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-section">
-          <h4 className="footer-title">SOCIAL</h4>
+          <h2 className="footer-title">SOCIAL</h2>
           <a href="http://www.instagram.com/DENZELburger" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a href="http://www.facebook.com/DENZELburger" target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href="http://www.twitter.com/DENZELburger" target="_blank" rel="noopener noreferrer">Twitter</a>

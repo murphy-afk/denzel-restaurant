@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import Picture from './Picture'
 import './Header.css'
 
 const navLinks = [
@@ -20,7 +21,13 @@ export default function Header() {
     <header className="header">
       <div className="header-inner container">
         <Link to="/" className="header-logo" onClick={() => setMenuOpen(false)}>
-          <img src="./images/assets/logo.png" alt="Denzel Logo" className="logo-img" />
+          <Picture
+            src="./images/assets/logo.png"
+            alt="Denzel Logo"
+            className="logo-img"
+            width={1022}
+            height={467}
+          />
         </Link>
 
         <button
@@ -33,12 +40,13 @@ export default function Header() {
           <span></span>
         </button>
 
-        <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
+        <nav className={`nav ${menuOpen ? 'nav-open' : ''}`} aria-label="Menu principale">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
+              aria-current={location.pathname === link.path ? 'page' : undefined}
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
