@@ -186,20 +186,30 @@ Photo of the challenge burger (CDN: c6595a_ff377649f12f428486c2f559f99eb2b4.jpg)
 - Mobile first responsive design, accessible markup, Italian alt texts.
 - Deliverable: complete site ready for review.
 
-### Session 5: SEO and performance
+### Session 5: Graphic refinement
+
+- Full visual polish pass on the current design after client feedback.
+- Improve typography hierarchy, spacing rhythm, and color contrast.
+- Refine the hero, cards, menu layout, gallery, and forms for a more premium feel.
+- Add micro interactions, hover states, and smooth transitions where missing.
+- Review the design on mobile, tablet, and desktop breakpoints.
+- Match the Denzel chalkboard and green vibe while keeping the look modern and easy to navigate.
+- Deliverable: visually polished site approved by the client.
+
+### Session 6: SEO and performance
 
 - Italian meta titles and descriptions per page, Open Graph tags, canonical URLs, JSON-LD Restaurant schema (address, hours, geo, menu).
 - sitemap.xml, robots.txt, semantic headings, image optimization (compressed images, WebP where possible, lazy loading), font loading strategy.
 - Deliverable: SEO checklist complete, good Lighthouse scores.
 
-### Session 6: GitHub Pages demo deploy
+### Session 7: GitHub Pages demo deploy
 
 - Build the client as a static site with embedded JSON data (no backend on GitHub Pages).
 - Configure base path and routing for GitHub Pages, add a GitHub Actions workflow to publish the build.
 - Verify the demo works and share the URL with the client.
 - Deliverable: live demo link for client presentation.
 
-### Session 7: Production deploy (after client feedback)
+### Session 8: Production deploy (after client feedback)
 
 - Choose the production host with the client (needs Node and MySQL, for example a VPS, Railway, or Render).
 - Deploy Express and MySQL, run migrations, point the domain, enable SSL.
