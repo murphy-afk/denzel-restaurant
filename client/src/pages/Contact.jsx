@@ -1,28 +1,42 @@
+import { useState, useEffect } from 'react'
+import { fetchServices, submitContact } from '../data/api'
 import './Contact.css'
 
 export default function Contact() {
+  const [services, setServices] = useState([])
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [formStatus, setFormStatus] = useState(null)
+  const [submitting, setSubmitting] = useState(false)
+
+  useEffect(() => {
+    fetchServices().then((data) => setServices(data))
+  }, [])
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setSubmitting(true)
+    const result = await submitContact(formData)
+    setFormStatus(result.message || 'Messaggio inviato con successo!')
+    setFormData({ name: '', email: '', message: '' })
+    setSubmitting(false)
+    setTimeout(() => setFormStatus(null), 5000)
+  }
+
   return (
     <div className="page container">
       <h1 className="page-title">SERVIZI</h1>
 
       <div className="services-grid">
-        <div className="service-card">
-          <h3 className="service-title">PRENOTAZIONE</h3>
-          <p>Invia una mail o chiama e ti riserveremo subito un tavolo</p>
-        </div>
-        <div className="service-card">
-          <h3 className="service-title">TAKE AWAY</h3>
-          <p>Chiama oppure ordina direttamente qui da noi i nostri piatti da gustare a casa</p>
-        </div>
-        <div className="service-card">
-          <h3 className="service-title">DELIVERY</h3>
-          <p>
-            Denzel direttamente a casa tua grazie a{' '}
-            <a href="https://www.justeat.it/restaurants-denzelartburgeremore" target="_blank" rel="noopener noreferrer">Just Eat</a>,{' '}
-            <a href="https://deliveroo.it/it/menu/milano/santambrogio/denzel" target="_blank" rel="noopener noreferrer">Deliveroo</a>,{' '}
-            oppure tramite whatsapp al numero 3398246521
-          </p>
-        </div>
+        {services.map((service) => (
+          <div className="service-card" key={service.id}>
+            <h3 className="service-title">{service.name}</h3>
+            <p>{service.description}</p>
+          </div>
+        ))}
       </div>
 
       <div className="contact-info">
@@ -43,6 +57,54 @@ export default function Contact() {
           <p>Ven (pranzo) 12.00 - 14.30</p>
           <p>Sab sera (solo nella stagione invernale) 19.00 - 23.00</p>
         </div>
+      </div>
+
+      <div className="contact-form-section">
+        <h3 className="contact-heading" style={{ textAlign: 'center' }}>SCRIVICI</h3>
+        {formStatus && (
+          <div className="form-status">{formStatus}</div>
+        )}
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="name">Nome</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              placeholder="Il tuo nome"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              placeholder="La tua email"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="message">Messaggio</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              rows="5"
+              placeholder="Il tuo messaggio"
+            />
+          </div>
+          <button type="submit" className="form-submit" disabled={submitting}>
+            {submitting ? 'Invio in corso...' : 'Invia'}
+          </button>
+        </form>
       </div>
 
       <div className="contact-map">
