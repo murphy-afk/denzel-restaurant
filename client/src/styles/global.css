@@ -88,6 +88,24 @@ input, textarea, select {
   padding: 0 var(--space-lg);
 }
 
+/* Visible only to screen readers, used for heading and label helpers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Layouts the inner img as if the picture wrapper was not there */
+picture {
+  display: contents;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
