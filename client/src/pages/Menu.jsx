@@ -1,11 +1,19 @@
 import { useState, useEffect } from 'react'
-import { fetchMenu } from '../data/api'
+import { fetchMenu, staticMenu } from '../data/api'
+import { useSeo } from '../seo'
 import './Menu.css'
 
 export default function Menu() {
   const [activeCategory, setActiveCategory] = useState('antipasti')
-  const [categories, setCategories] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [categories, setCategories] = useState(staticMenu)
+  const [loading, setLoading] = useState(false)
+
+  useSeo({
+    title: 'Menù | Denzel Art Burger Kosher Milano',
+    description:
+      'Antipasti, hamburger, pesce e piatti del mondo: scopri il menù completo del ristorante Denzel in via Washington 9, Milano.',
+    path: '/menu'
+  })
 
   useEffect(() => {
     fetchMenu('ita').then((data) => {

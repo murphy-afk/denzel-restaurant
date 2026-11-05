@@ -1,10 +1,18 @@
 import { useState, useEffect } from 'react'
-import { fetchReviews } from '../data/api'
+import { fetchReviews, staticReviews } from '../data/api'
+import { useSeo } from '../seo'
 import './DiconoDiNoi.css'
 
 export default function DiconoDiNoi() {
-  const [reviews, setReviews] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [reviews, setReviews] = useState(staticReviews)
+  const [loading, setLoading] = useState(false)
+
+  useSeo({
+    title: 'Cosa dicono di noi | Denzel Art Burger Milano',
+    description:
+      'Recensioni, articoli e opinioni su Denzel, ristorante kosher con street food gourmet in via Washington 9, Milano.',
+    path: '/diconodinoi'
+  })
 
   useEffect(() => {
     fetchReviews().then((data) => {

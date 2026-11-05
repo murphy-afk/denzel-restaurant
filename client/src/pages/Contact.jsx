@@ -1,12 +1,20 @@
 import { useState, useEffect } from 'react'
-import { fetchServices, submitContact } from '../data/api'
+import { fetchServices, submitContact, staticServices } from '../data/api'
+import { useSeo } from '../seo'
 import './Contact.css'
 
 export default function Contact() {
-  const [services, setServices] = useState([])
+  const [services, setServices] = useState(staticServices)
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [formStatus, setFormStatus] = useState(null)
   const [submitting, setSubmitting] = useState(false)
+
+  useSeo({
+    title: 'Servizi e Contatti | Denzel Art Burger Milano',
+    description:
+      'Prenota un tavolo, ordina take away o delivery a Milano: via Washington 9, tel. 02 485 19326. Orari e mappa del ristorante Denzel.',
+    path: '/contact'
+  })
 
   useEffect(() => {
     fetchServices().then((data) => setServices(data))
@@ -33,7 +41,7 @@ export default function Contact() {
       <div className="services-grid">
         {services.map((service) => (
           <div className="service-card" key={service.id}>
-            <h3 className="service-title">{service.name}</h3>
+          <h2 className="service-title">{service.name}</h2>
             <p>{service.description}</p>
           </div>
         ))}
@@ -41,7 +49,7 @@ export default function Contact() {
 
       <div className="contact-info">
         <div className="contact-block">
-          <h3 className="contact-heading">DENZEL</h3>
+          <h2 className="contact-heading">DENZEL</h2>
           <p>via Washington 9, 20146 Milano (MI)</p>
           <p>
             <a href="mailto:ristorantedenzel@yahoo.it">ristorantedenzel@yahoo.it</a>
@@ -51,7 +59,7 @@ export default function Contact() {
         </div>
 
         <div className="contact-block">
-          <h3 className="contact-heading">ORARIO DI APERTURA</h3>
+          <h2 className="contact-heading">ORARIO DI APERTURA</h2>
           <p>Dom - Gio (pranzo) 12.00 - 14.30</p>
           <p>(cena) 19.00 - 23.00</p>
           <p>Ven (pranzo) 12.00 - 14.30</p>
@@ -60,7 +68,7 @@ export default function Contact() {
       </div>
 
       <div className="contact-form-section">
-        <h3 className="contact-heading" style={{ textAlign: 'center' }}>SCRIVICI</h3>
+        <h2 className="contact-heading" style={{ textAlign: 'center' }}>SCRIVICI</h2>
         {formStatus && (
           <div className="form-status">{formStatus}</div>
         )}
@@ -108,7 +116,7 @@ export default function Contact() {
       </div>
 
       <div className="contact-map">
-        <h3 className="contact-heading" style={{ textAlign: 'center' }}>MAP</h3>
+        <h2 className="contact-heading" style={{ textAlign: 'center' }}>MAP</h2>
         <iframe
           title="Mappa Denzel Milano"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.0!2d9.17!3d45.46!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDI3JzMyLjAiTiA5wrAxMCcwMC4wIkU!5e0!3m2!1sit!2sit!4v1!5m2!1sit!2sit"

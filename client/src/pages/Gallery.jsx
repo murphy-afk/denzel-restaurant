@@ -1,11 +1,24 @@
 import { useState, useEffect } from 'react'
-import { fetchGallery } from '../data/api'
+import { fetchGallery, staticGallery } from '../data/api'
+import { useSeo } from '../seo'
+import Picture from '../components/Picture'
+import galleryWidths from '../data/gallery-widths.json'
 import './Gallery.css'
 
+// Grid cells are about half a mobile viewport and about 260px on desktop.
+const GRID_SIZES = '(max-width: 576px) 50vw, (max-width: 992px) 33vw, 260px'
+
 export default function Gallery() {
-  const [images, setImages] = useState([])
+  const [images, setImages] = useState(staticGallery)
   const [lightbox, setLightbox] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
+
+  useSeo({
+    title: 'Gallery | Denzel Art Burger Kosher Milano',
+    description:
+      'Foto del ristorante, degli hamburger Denzel e degli ospiti celebri che hanno visitato la nostra locale in via Washington 9, Milano.',
+    path: '/gallery'
+  })
 
   useEffect(() => {
     fetchGallery().then((data) => {
@@ -29,6 +42,16 @@ export default function Gallery() {
     return `./images/gallery/${safeName}${fileSuffix}.${ext}`
   }
 
+  // WebP srcset pointing at the pre generated variants plus the full image.
+  const getWebpSrcSet = (src) => {
+    const base = src.replace('./images/gallery/', '').replace(/\.(jpg|png)$/i, '')
+    const info = galleryWidths[base]
+    if (!info) return undefined
+    const parts = info.variants.map((w) => `./images/gallery/${base}-${w}w.webp ${w}w`)
+    parts.push(`./images/gallery/${base}.webp ${info.full}w`)
+    return parts.join(', ')
+  }
+
   if (loading) {
     return (
       <div className="page container">
@@ -50,10 +73,13 @@ export default function Gallery() {
             onClick={() => openLightbox(index)}
             aria-label={`Apri foto: ${item.title}`}
           >
-            <img
+            <Picture
               src={getImageSrc(item, index)}
+              webpSrcSet={getWebpSrcSet(getImageSrc(item, index))}
+              sizes={GRID_SIZES}
               alt={item.title}
-              loading="lazy"
+              loading={index < 2 ? 'eager' : 'lazy'}
+              fetchpriority={index === 0 ? 'high' : undefined}
             />
             <span className="gallery-caption">{item.title}</span>
           </button>
@@ -73,9 +99,10 @@ export default function Gallery() {
             &#8249;
           </button>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img
+            <Picture
               src={getImageSrc(images[lightbox], lightbox)}
               alt={images[lightbox].title}
+              loading="lazy"
             />
             <p className="lightbox-caption">{images[lightbox].title}</p>
           </div>
