@@ -1,31 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { fetchFaq } from '../data/api'
 import './Page.css'
-
-const faqItems = [
-  {
-    question: 'Che cosa e lo Shabbat?',
-    answer: 'Lo Shabbat e il giorno di riposo settimanale della religione ebraica. Ha inizio al tramonto del venerdi e finisce al tramonto del sabato, per questo motivo non siamo aperti il venerdi sera e durante l\'ora legale anche il sabato sera.'
-  },
-  {
-    question: 'Che cosa e quella pergamena attaccata alla porta?',
-    answer: 'Si chiama Mezuzah ed e appunto una pergamena su cui e stilata una preghiera fondamentale della religione ebraica. E usanza che chi entra in casa tocchi la mezuzah con le dita e baci le dita stesse, in segno di rispetto per la Torah di cui contiene passi.'
-  },
-  {
-    question: 'Sono intollerante al lattosio, posso stare tranquillo?',
-    answer: 'Assolutamente si, nel nostro ristorante non possono essere introdotti latticini essendo basari (di carne) Glatt - Kosher. Non rinunciamo ai dolci pero che sono fatti di latte di soia.'
-  },
-  {
-    question: 'Che cosa rappresenta il candelabro con 9 braccia?',
-    answer: 'Si chiama Menorah ed e un candelabro con nove candele: otto di queste rappresentano le notti di Chanukah, l\'ultima (la piu alta) e chiamata Shamash o "serva" perche e usata per illuminare le altre candele. Nella prima notte di Chanukah viene accesa una candela che continuera a bruciare per otto notti, fino a quando cioe tutte le candele saranno accese.'
-  },
-  {
-    question: 'Avete anche piatti vegetariani nel vostro menu?',
-    answer: 'Si, ci sono i nostri croccanti felafel, insalate, involtini di melanzane e a breve anche l\'hamburger vegetariano.'
-  }
-]
 
 export default function Kosher() {
   const [openIndex, setOpenIndex] = useState(null)
+  const [faqItems, setFaqItems] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetchFaq().then((data) => {
+      setFaqItems(data)
+      setLoading(false)
+    })
+  }, [])
 
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index)
@@ -79,23 +66,27 @@ export default function Kosher() {
           FAQ - DOMANDE FREQUENTI
         </h2>
 
-        <div className="faq-list">
-          {faqItems.map((item, index) => (
-            <div className="faq-item" key={index}>
-              <button
-                className="faq-question"
-                onClick={() => toggle(index)}
-                aria-expanded={openIndex === index}
-              >
-                {item.question}
-                <span className={`faq-icon ${openIndex === index ? 'open' : ''}`}>+</span>
-              </button>
-              {openIndex === index && (
-                <div className="faq-answer">{item.answer}</div>
-              )}
-            </div>
-          ))}
-        </div>
+        {loading ? (
+          <p style={{ textAlign: 'center' }}>Caricamento...</p>
+        ) : (
+          <div className="faq-list">
+            {faqItems.map((item, index) => (
+              <div className="faq-item" key={item.id || index}>
+                <button
+                  className="faq-question"
+                  onClick={() => toggle(index)}
+                  aria-expanded={openIndex === index}
+                >
+                  {item.question}
+                  <span className={`faq-icon ${openIndex === index ? 'open' : ''}`}>+</span>
+                </button>
+                {openIndex === index && (
+                  <div className="faq-answer">{item.answer}</div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )
