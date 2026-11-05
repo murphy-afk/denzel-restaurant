@@ -1,11 +1,20 @@
 import { useState, useEffect } from 'react'
-import { fetchFaq } from '../data/api'
+import { fetchFaq, staticFaq } from '../data/api'
+import { useSeo } from '../seo'
+import Picture from '../components/Picture'
 import './Page.css'
 
 export default function Kosher() {
   const [openIndex, setOpenIndex] = useState(null)
-  const [faqItems, setFaqItems] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [faqItems, setFaqItems] = useState(staticFaq)
+  const [loading, setLoading] = useState(false)
+
+  useSeo({
+    title: 'Che cosa vuol dire Kosher | Denzel Milano',
+    description:
+      'Le regole dell\'alimentazione ebraica spiegate con semplicità: Shechitah, Glatt, certificazione del rabbino e domande frequenti.',
+    path: '/kosher'
+  })
 
   useEffect(() => {
     fetchFaq().then((data) => {
@@ -59,7 +68,13 @@ export default function Kosher() {
         </p>
 
         <div className="page-image">
-          <img src="./images/assets/kosher-photo.jpg" alt="Certificazione kosher Denzel" />
+          <Picture
+            src="./images/assets/kosher-photo.jpg"
+            alt="Certificazione kosher Denzel"
+            width={600}
+            height={700}
+            loading="lazy"
+          />
         </div>
 
         <h2 style={{ textAlign: 'center', color: 'var(--color-accent)', marginTop: 'var(--space-2xl)' }}>

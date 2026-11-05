@@ -1,6 +1,15 @@
+import { useSeo } from '../seo'
+import Picture from '../components/Picture'
 import './Page.css'
 
 export default function ChiSiamo() {
+  useSeo({
+    title: 'Concept | Denzel Art Burger Kosher Milano',
+    description:
+      'Lo street food di diverse parti del mondo in versione gourmet, con carne certificata Kosher da piccoli allevamenti controllati.',
+    path: '/chisiamo'
+  })
+
   return (
     <div className="page container">
       <h1 className="page-title">CONCEPT</h1>
@@ -19,9 +28,12 @@ export default function ChiSiamo() {
         <p className="highlight">Tutto in un unico ristorante!</p>
 
         <div className="page-image">
-          <img
+          <Picture
             src="./images/assets/chisiamo-burger.jpg"
-            alt="Hamburger Denzel serviti aperti"
+            alt="Hamburger Denzel serviti aperti su un tagliere di legno"
+            width={842}
+            height={597}
+            loading="lazy"
           />
         </div>
 

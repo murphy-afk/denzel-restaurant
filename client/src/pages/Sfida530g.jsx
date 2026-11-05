@@ -1,6 +1,15 @@
+import { useSeo } from '../seo'
+import Picture from '../components/Picture'
 import './Sfida530g.css'
 
 export default function Sfida530g() {
+  useSeo({
+    title: 'Sfida 530g | Denzel Art Burger Milano',
+    description:
+      'Ordina e mangia un intero Denzel Burger da 530g e ricevi in premio la nostra T-shirt da vero Denzel addicted.',
+    path: '/sfida530g'
+  })
+
   return (
     <div className="page container">
       <h1 className="page-title">SFIDA 530g</h1>
@@ -20,9 +29,12 @@ export default function Sfida530g() {
         </p>
 
         <div className="sfida-image">
-          <img
+          <Picture
             src="./images/assets/sfida-burger.jpg"
-            alt="Sfida 530g Denzel Burger"
+            alt="Denzel Burger da 530g della sfida"
+            width={720}
+            height={960}
+            loading="lazy"
           />
         </div>
       </div>
