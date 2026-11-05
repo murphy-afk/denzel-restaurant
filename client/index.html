@@ -19,9 +19,44 @@
     <meta name="twitter:image" content="https://murphy-afk.github.io/denzel-restaurant/images/assets/hero-home.jpg" />
     <link rel="canonical" href="https://murphy-afk.github.io/denzel-restaurant/" />
     <link rel="icon" type="image/png" href="./images/assets/logo.png" />
+    <script>
+      // Preloads the LCP image of the route in the initial document, so it does
+      // not wait for the JS bundle. Skipped on every other route to avoid
+      // wasting bandwidth.
+      var route = location.pathname.replace(/\/$/, '')
+      var hero = route === '' || route.endsWith('/denzel-restaurant')
+      var gallery = route.endsWith('/gallery')
+      var link = document.createElement('link')
+      link.rel = 'preload'
+      link.as = 'image'
+      link.type = 'image/webp'
+      if (hero) {
+        link.href = './images/assets/hero-home-750w.webp'
+        link.imagesrcset = './images/assets/hero-home-750w.webp 750w, ./images/assets/hero-home-1080w.webp 1080w, ./images/assets/hero-home.webp 1920w'
+        link.imagesizes = '100vw'
+      } else if (gallery) {
+        // Same srcset/sizes the gallery grid uses for its first photo.
+        link.href = './images/gallery/denzel_wings-528w.webp'
+        link.imagesrcset = './images/gallery/denzel_wings-528w.webp 528w, ./images/gallery/denzel_wings.webp 960w'
+        link.imagesizes = '(max-width: 576px) 50vw, (max-width: 992px) 33vw, 260px'
+      }
+      if (hero || gallery) {
+        link.setAttribute('fetchpriority', 'high')
+        document.head.appendChild(link)
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    </noscript>
     <title>Denzel Art Burger Fish & More | Ristorante Kosher Milano</title>
     <script type="application/ld+json">
       {
