@@ -67,66 +67,68 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="contact-form-section">
-        <h2 className="contact-heading" style={{ textAlign: 'center' }}>SCRIVICI</h2>
-        {formStatus && (
-          <div className="form-status">{formStatus}</div>
-        )}
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Nome</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              placeholder="Il tuo nome"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              placeholder="La tua email"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Messaggio</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              rows="5"
-              placeholder="Il tuo messaggio"
-            />
-          </div>
-          <button type="submit" className="form-submit" disabled={submitting}>
-            {submitting ? 'Invio in corso...' : 'Invia'}
-          </button>
-        </form>
-      </div>
+      <div className="contact-bottom">
+        <div className="contact-form-section">
+          <h2 className="contact-heading" style={{ textAlign: 'center' }}>SCRIVICI</h2>
+          {formStatus && (
+            <div className="form-status">{formStatus}</div>
+          )}
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="name">Nome</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                placeholder="Il tuo nome"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder="La tua email"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message">Messaggio</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows="5"
+                placeholder="Il tuo messaggio"
+              />
+            </div>
+            <button type="submit" className="form-submit" disabled={submitting}>
+              {submitting ? 'Invio in corso...' : 'Invia'}
+            </button>
+          </form>
+        </div>
 
-      <div className="contact-map">
-        <h2 className="contact-heading" style={{ textAlign: 'center' }}>MAP</h2>
-        <iframe
-          title="Mappa Denzel Milano"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.0!2d9.17!3d45.46!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDI3JzMyLjAiTiA5wrAxMCcwMC4wIkU!5e0!3m2!1sit!2sit!4v1!5m2!1sit!2sit"
-          width="100%"
-          height="350"
-          style={{ border: 0, borderRadius: 'var(--border-radius)' }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <div className="contact-map">
+          <h2 className="contact-heading" style={{ textAlign: 'center' }}>MAP</h2>
+          <iframe
+            title="Mappa Denzel Milano"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.0!2d9.17!3d45.46!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDI3JzMyLjAiTiA5wrAxMCcwMC4wIkU!5e0!3m2!1sit!2sit!4v1!5m2!1sit!2sit"
+            width="100%"
+            height="350"
+            style={{ border: 0, borderRadius: 'var(--border-radius)' }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </div>
     </div>
   )

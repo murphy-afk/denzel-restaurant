@@ -67,10 +67,18 @@
   margin-bottom: 0;
 }
 
+/* Form and map sit side by side, stacking on mobile */
+.contact-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 /* Contact form */
 .contact-form-section {
-  max-width: 520px;
-  margin: 0 auto var(--space-2xl);
+  min-width: 0;
 }
 
 .form-status {
@@ -158,13 +166,17 @@
 }
 
 .contact-map {
-  max-width: 750px;
-  margin: 0 auto;
+  min-width: 0;
+  /* Column flex so the iframe fills the height of the taller form next to it. */
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-map iframe {
   border-radius: var(--border-radius) !important;
   box-shadow: var(--shadow-md);
+  flex: 1;
+  min-height: 350px;
 }
 
 @media (max-width: 768px) {
@@ -173,6 +185,10 @@
   }
 
   .contact-info {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-bottom {
     grid-template-columns: 1fr;
   }
 

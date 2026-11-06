@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { fetchFaq, staticFaq } from '../data/api'
 import { useSeo } from '../seo'
-import Picture from '../components/Picture'
 import './Page.css'
 
 export default function Kosher() {
@@ -66,16 +65,6 @@ export default function Kosher() {
           costantemente controllate dal rabbino come garanzia dalla nostra
           certificazione.
         </p>
-
-        <div className="page-image">
-          <Picture
-            src="./images/assets/kosher-photo.jpg"
-            alt="Certificazione kosher Denzel"
-            width={600}
-            height={700}
-            loading="lazy"
-          />
-        </div>
 
         <h2 style={{ textAlign: 'center', color: 'var(--color-accent)', marginTop: 'var(--space-2xl)' }}>
           FAQ - DOMANDE FREQUENTI
