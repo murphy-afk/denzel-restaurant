@@ -85,7 +85,10 @@ input, textarea, select {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  /* Only horizontal padding, so combined rules (page, footer, cards) keep
+     their own vertical padding instead of having it reset to zero. */
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
 }
 
 /* Visible only to screen readers, used for heading and label helpers */
