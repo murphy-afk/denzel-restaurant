@@ -31,7 +31,7 @@ export default function ChiSiamo() {
           <Picture
             src="./images/assets/chisiamo-burger.jpg"
             alt="Hamburger Denzel serviti aperti su un tagliere di legno"
-            width={842}
+            width={794}
             height={597}
             loading="lazy"
           />
